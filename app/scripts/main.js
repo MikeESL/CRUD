@@ -54,21 +54,17 @@ $(".reset").click(function(event){
 
 
 $.ajax({
-	url: "http://tiy-fee-rest.herokuapp.com/collections/mike",
+	url: "http://tiy-fee-rest.herokuapp.com/collections/mike/5369a7b0dd635e020000006a",
 	type: 'DELETE',
-	data: 'data',
-	error: function(data){
+	error: function(jqXHR, status, error){
 		alert( "them's the best greens you ever flopped a lip over, ol' gal, but your DELETE still failed");
 	},
 	success: function(data){
 		confirm("are you sure?");
-			for (var i=0, d=delItem.length; d<g; i++){
-						var obj = getItem[i];
-						var id = obj._id;
-
-						//html += '<div data-id=\"' + id + '\"> '+showUp+'</div>\n'
-					}
-					$(".crudHomework").html(html);
+		var html = "";
+					//html += '<div data-id=\"' + id + '\"> '+showUp+'</div>\n'
+					
+					$(".deleteStuff").html(html);
 
 	}
 	
