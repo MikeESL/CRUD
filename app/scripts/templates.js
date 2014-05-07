@@ -67,23 +67,23 @@ $(document).ready(function() {
 
 
 	//Today Submit 
-	$("#todaytodoSubmit").submit (function(e) {
-	e.preventDefault();
+	// $("#todaytodoSubmit").submit (function(e) {
+	// e.preventDefault();
 
-	var todayTask = $(".taskToday").val();
+	// var todayTask = $(".taskToday").val();
 
-	var todayToDosObj = {
+	// var todayToDosObj = {
 
-					todayDo: todayTask
-	};
+	// 				todayDo: todayTask
+	// };
 
-	todayToDos.push(todayToDosObj);
+	// todayToDos.push(todayToDosObj);
 
-	var todayTaskString = _.template($("#todayTmpl").html(), todayToDos);
+	// var todayTaskString = _.template($("#todayTmpl").html(), todayToDos);
 
 	$(".taskToday").val(" ");
-	$(".duetodayul").html(todayTaskString);
-	$(".duetomorrowul").html(todayTaskString);
+	// $(".duetodayul").html(todayTaskString);
+	// $(".duetomorrowul").html(todayTaskString);
 
 	//will count up, but not down. yet
 	$(".todaycount").html("(" + todayToDos.length + ")");
@@ -208,5 +208,5 @@ $(".thedoer").on('focusout', 'li > input', function () {
 	// })
 
 
-});
+// });
 
