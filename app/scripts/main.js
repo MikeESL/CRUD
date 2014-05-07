@@ -27,7 +27,7 @@ $(".btnGet").click(function(event){
 		type: 'GET',
 		data: 'data',
 		error: function(data){
-			alert(FAIL);
+			alert( "GET FAIL");
 		},
 		success: function(data){
 				alert(data);
@@ -58,11 +58,11 @@ $.ajax({
 	type: 'DELETE',
 	data: 'data',
 	error: function(data){
-		alert(FAIL);
+		alert( "them's the best greens you ever flopped a lip over, ol' gal, but your DELETE still failed");
 	},
 	success: function(data){
 		confirm("are you sure?");
-			for (var i=0, g=getItem.length; i<g; i++){
+			for (var i=0, d=delItem.length; d<g; i++){
 						var obj = getItem[i];
 						var id = obj._id;
 
