@@ -61,7 +61,7 @@ $.ajax({
 	},
 	success: function(data){
 		confirm("are you sure?");
-		var html = "";
+		//var html = "";
 					//html += '<div data-id=\"' + id + '\"> '+showUp+'</div>\n'
 					
 					$(".deleteStuff").html(html);
@@ -71,6 +71,32 @@ $.ajax({
 })
 })
 
+
+//UPDATE
+$(".updateStuff").click(function(event){
+	event.preventDefault();
+
+	var updateUpdate = $(".taskUpdate").val();
+
+$.ajax({
+	url: "http://tiy-fee-rest.herokuapp.com/collections/mike/53698513dd635e0200000040",
+	type: "PUT",
+	data: updateUpdate,
+	error: function (jqXHR, status, error){
+		alert ("error update: sleep all day cause I'm up all goddamn night" + error);
+		},
+		success: function(data, dataType, jqXHR){
+			todayToDos.push(updateUpdate);
+			
+			
+			//var html = "";
+
+
+
+
+		}
+})
+})
 });
 
 
