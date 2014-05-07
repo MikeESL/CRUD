@@ -20,6 +20,8 @@ $(document).ready(function() {
 
 });
 //GET	
+$(".btnGet").click(function(event){
+
 	$.ajax({
 		url: "http://tiy-fee-rest.herokuapp.com/collections/mike",
 		type: 'GET',
@@ -41,8 +43,37 @@ $(document).ready(function() {
 					$(".crudHomework").html(html);
 		}
 	})
+})
 
 //DELETE
+
+$(".reset").click(function(event){
+  		//$(".completeditemsul").empty();
+  		// completedToDos.length = 0;	
+  		//$(".completecount").html("(" + completedToDos.length + ")");
+
+
+$.ajax({
+	url: "http://tiy-fee-rest.herokuapp.com/collections/mike",
+	type: 'DELETE',
+	data: 'data',
+	error: function(data){
+		alert(FAIL);
+	},
+	success: function(data){
+		confirm("are you sure?");
+			for (var i=0, g=getItem.length; i<g; i++){
+						var obj = getItem[i];
+						var id = obj._id;
+
+						//html += '<div data-id=\"' + id + '\"> '+showUp+'</div>\n'
+					}
+					$(".crudHomework").html(html);
+
+	}
+	
+})
+})
 
 });
 

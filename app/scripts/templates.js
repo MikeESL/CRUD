@@ -146,12 +146,12 @@ $(document).ready(function() {
 
 	});
 
-$(".reset").click(function(event){
-  		$(".completeditemsul").empty();
-  		 completedToDos.length = 0;	
-  		$(".completecount").html("(" + completedToDos.length + ")");
+// $(".reset").click(function(event){
+//   		$(".completeditemsul").empty();
+//   		 completedToDos.length = 0;	
+//   		$(".completecount").html("(" + completedToDos.length + ")");
 
-  	});
+//   	});
 
 
 	//removes the to-do
