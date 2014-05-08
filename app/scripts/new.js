@@ -26,7 +26,7 @@ var ToDos = {
 		$el.html(tmpl);
 	},
 // POST ------------------------------------ //
-	addToDos: function(e){
+	inputToDo: function(e){
 		e.preventDefault();
 
 		var newToDoInput = { 
@@ -38,7 +38,7 @@ var ToDos = {
 			type:'POST',
 			data: newToDoInput,
 			dataType: 'JSON',
-			error: function (jqXHR, status, error){
+			error: function (data){
 				alert ("Failed POST request");
 			},
 			success: function(data){
