@@ -62,8 +62,8 @@ var ToDos = {
 			},
 			success: function(data){
 				alert("GET request successful");
-				var ToDoItem = window.ToDoItem = data
-				ToDos.render($(".duetodayul"), Templates.todayDoTmpl, ToDoItem);
+				var newToDoInput = window.newToDoInput = data
+				ToDos.render($(".duetodayul"), Templates.todayDoTmpl, newToDoInput);
 
 			}		
 	})
