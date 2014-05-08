@@ -24,7 +24,8 @@ Templates.todayDoTmpl = [
 
  	"<% _.each(updateToDoInput, function(updateToDoInput, index, list) { %>",
 
-	"<li data-todayid=\"<%= updateToDoInput._id %>\" data-index=\"<%= index %>\" class=\"toDoItem\"> <form action= \"\" id=\"editSubmit\"><input type=\"text\" placeholder=\"update\" class=\"taskEdit\"><button type=\"submit\" class=\"submitEdit\">Update</button></form><span class=\"glyphicon glyphicon-ok finishedItem\"></span>",
+	"<li data-todayid=\"<%= newToDoInput._id %>\" data-index=\"<%= index %>\" class=\"toDoItem\"><div class=\"newForm\"> <form action= \"\" id=\"editSubmit\"><input type=\"text\" placeholder=\"update\" class=\"taskEdit\"><button type=\"submit\" class=\"submitEdit\">Update</button></form></div><div class=\"newCheck\"><span class=\"glyphicon glyphicon-ok finishedItem\"></span></div>",
+	//"<li data-todayid=\"<%= updateToDoInput._id %>\" data-index=\"<%= index %>\" class=\"toDoItem\"> <form action= \"\" id=\"editSubmit\"><input type=\"text\" placeholder=\"update\" class=\"taskEdit\"><button type=\"submit\" class=\"submitEdit\">Update</button></form><span class=\"glyphicon glyphicon-ok finishedItem\"></span>",
             
 
     "<%= updateToDoInput.todayDo %>",

@@ -102,20 +102,21 @@ var ToDos = {
 
 		var editid = $thisEdit.data("todayid");
 		console.log(editid);
-		var updateToDoInput = { 
+		window.updateToDoInput = { 
 			todayDo: $thisEdit.find(".taskEdit").val()
 			};
 		$.ajax({
 			url: "http://tiy-fee-rest.herokuapp.com/collections/mike/" + editid,
 			type: "PUT",
-			data: updateToDoInput,
+			data: window.updateToDoInput,
 			error: function(data){
 				alert("update failed");
 			},
 			success: function(data){
-				alert("update successful");
 				ToDos.render($(".duetodayul"), Templates.editToDoTmpl, updateToDoInput);
-				$(".newForm").html(updateToDoInput.todayDo);
+				console.log($(".newCheck"))
+				$(".newCheck").html(window.updateToDoInput.todayDo);
+
 			}
 
 		})
