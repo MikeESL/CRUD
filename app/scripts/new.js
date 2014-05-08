@@ -19,6 +19,7 @@ var ToDos = {
 	},
 	initEvents: function(){
 		$("#todaytodoSubmit").on("submit", this.inputToDo);
+		$(".thedoer").on("click", ".finishedItem", this.removeToDo);
 		
 	},
 	render: function ($el, template, data) {
@@ -69,5 +70,39 @@ var ToDos = {
 	})
 
 },
+// end GET ----------------------------- //
+// DELETE request ----------------------- //
+	
+	removeToDo: function(e){
+		e.preventDefault();
+
+		var $thisToDo = $(this).closest("li").addClass("line");
+		var todayid = $thisToDo.data("todayid");
+		$.ajax({
+			url: "http://tiy-fee-rest.herokuapp.com/collections/mike" + todayid,
+			type: "DELETE",
+			error: function (data){
+				alert ("DELETE Failed");
+			},
+			success: function(data){
+				alert ("Delete good!");
+				ToDos.renderToDos;
+
+			}
+		});
+
+		
+		
+	}
+
+
+
+
+
+
+
+
+
+
 
 };
