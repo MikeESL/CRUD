@@ -19,7 +19,7 @@ var ToDos = {
 	},
 	initEvents: function(){
 		$("#todaytodoSubmit").on("submit", this.inputToDo);
-		$(".thedoer").on("click", ".finishedItem", this.removeToDo);
+		$(".duetodayul").on("click", ".finishedItem", this.removeToDo);
 		
 	},
 	render: function ($el, template, data) {
@@ -40,10 +40,10 @@ var ToDos = {
 			data: newToDoInput,
 			dataType: 'JSON',
 			error: function (data){
-				alert ("Failed POST request");
+				//alert ("Failed POST request");
 			},
 			success: function(data){
-				alert ("POST request successful");
+				//alert ("POST request successful");
 				ToDos.renderToDos(data);
 			}
 	});
@@ -59,10 +59,10 @@ var ToDos = {
 			data: 'data',
 			dataType: 'JSON',
 			error: function(data){
-				alert( "Failed GET request");
+				//alert( "Failed GET request");
 			},
 			success: function(data){
-				alert("GET request successful");
+				//alert("GET request successful");
 				var newToDoInput = window.newToDoInput = data
 				ToDos.render($(".duetodayul"), Templates.todayDoTmpl, newToDoInput);
 
@@ -76,17 +76,19 @@ var ToDos = {
 	removeToDo: function(e){
 		e.preventDefault();
 
-		var $thisToDo = $(this).closest("li").addClass("line");
+		var $thisToDo = $(this).closest("li");
+		console.log($thisToDo);
 		var todayid = $thisToDo.data("todayid");
+		console.log(todayid);
 		$.ajax({
-			url: "http://tiy-fee-rest.herokuapp.com/collections/mike" + todayid,
+			url: "http://tiy-fee-rest.herokuapp.com/collections/mike/" + todayid,
 			type: "DELETE",
 			error: function (data){
-				alert ("DELETE Failed");
+				//alert ("DELETE Failed");
 			},
 			success: function(data){
-				alert ("Delete good!");
-				ToDos.renderToDos;
+				//alert ("Delete good!");
+				ToDos.renderToDos(data);
 
 			}
 		});
