@@ -18,25 +18,25 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
-
+<!-- commenting this template out, trying to build it in Newtemplates.js
         <script type ="template/html" id="todayTmpl">
 
-    <% _.each(todayToDos, function(todayToDos, index, list) { %>
+    <% _.each(newToDoInput, function(newToDoInput, index, list) { %>
 
 
 
         
-            <li data-index="<%= index %>" class="toDoItem"> <span class="glyphicon glyphicon-ok finishedItem"></span>
+            <li data-todayid="<%= todayToDo._id %>" data-index="<%= index %>" class="toDoItem"> <span class="glyphicon glyphicon-ok finishedItem"></span>
             
 
-            <%= todayToDos.todayDo %>  </li>
+            <%= newToDoInput.todayDo %>  </li>
 
 
     <% }); %>
 
 
         </script>
-
+ -->
 <script type ="template/html" id="tomorrowTmpl">
 
     <% _.each(tomorrowToDos, function(tomorrowToDos, index, list) { %>
@@ -117,10 +117,10 @@
 
                             <ul class="duetodayul dos"></ul>
 
-                            <div class="crudHomework">
+                            <!-- <div class="crudHomework">
                                 <button class="btn btnGet">Click to GET</button> 
 
-                            </div>
+                            </div> -->
 
 
                         
@@ -209,11 +209,14 @@
         <script src="scripts/main.js"></script>
                 <script src="scripts/switcher.js"></script>
 
-        <script src="scripts/todayarray.js"></script>
-                <script src="scripts/tomorrowarray.js"></script>
-                <script src="scripts/completearray.js"></script>
+       <!--  // <script src="scripts/todayarray.js"></script>
+        //         <script src="scripts/tomorrowarray.js"></script>
+        //         <script src="scripts/completearray.js"></script> -->
+                <script src="scripts/NEWtemplates.js"></script>
+                 <script src="scripts/new.js"></script>
 
-        <script src="scripts/templates.js"></script>
+
+        
 
         <!-- endbuild -->
 </body>
