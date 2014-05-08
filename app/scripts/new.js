@@ -20,8 +20,9 @@ var ToDos = {
 	initEvents: function(){
 		$("#todaytodoSubmit").on("submit", this.inputToDo);
 		$(".duetodayul").on("click", ".finishedItem", this.removeToDo);
-		
+		$(".duetodayul").on("click", ".submitEdit", this.updateToDo);
 	},
+
 	render: function ($el, template, data) {
 		var tmpl = _.template(template, data);
 		$el.html(tmpl);
@@ -71,15 +72,14 @@ var ToDos = {
 
 },
 // end GET ----------------------------- //
-// DELETE request ----------------------- //
-	
+
+//RemoveToDo & DELETE request---------------- //	
 	removeToDo: function(e){
 		e.preventDefault();
 
 		var $thisToDo = $(this).closest("li");
-		console.log($thisToDo);
 		var todayid = $thisToDo.data("todayid");
-		console.log(todayid);
+		console.log(todayid);		
 		$.ajax({
 			url: "http://tiy-fee-rest.herokuapp.com/collections/mike/" + todayid,
 			type: "DELETE",
@@ -92,10 +92,38 @@ var ToDos = {
 
 			}
 		});
+	},
+//end Remove --------------------------- //
+// Update -----------------------------//
+	updateToDo: function (e){
+		e.preventDefault();
 
+		var $thisEdit = $(this).closest("li");
+
+		var editid = $thisEdit.data("todayid");
+		console.log(editid);
+		var updateToDoInput = { 
+			todayDo: $thisEdit.find(".taskEdit").val()
+			};
+		$.ajax({
+			url: "http://tiy-fee-rest.herokuapp.com/collections/mike/" + editid,
+			type: "PUT",
+			data: updateToDoInput,
+			error: function(data){
+				alert("update failed");
+			},
+			success: function(data){
+				alert("update successful");
+				ToDos.render($(".duetodayul"), Templates.editToDoTmpl, updateToDoInput);
+				$(".newForm").html(updateToDoInput.todayDo);
+			}
+
+		})
 		
-		
-	}
+
+		}
+
+
 
 
 

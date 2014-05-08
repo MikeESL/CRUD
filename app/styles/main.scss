@@ -151,9 +151,14 @@ body {
         border-bottom: 1px solid tomato;
     }
 
-    .thedoer input{
+    .duetoday input{
         height: 50px;
         min-width: 400px;
+    }
+
+    .duetodayul  input{
+        height: 25px;
+        min-width: 125px;
     }
 
     .thedoer button.addtask{
@@ -244,4 +249,7 @@ body {
     // take out later:
     .updateStuff{
         margin-top: 50px;
+    }
+    .taskEdit{
+        width: 25px;
     }
