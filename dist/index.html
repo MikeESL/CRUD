@@ -1,0 +1,56 @@
+<!DOCTYPE html><html class=no-js><head><meta charset=utf-8><title>ThetoDoApp</title><meta name=description content=""><meta name=viewport content="width=device-width"><link rel="shortcut icon" href=/6df2b309.favicon.ico><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/69fdc4b3.main.css><script src=scripts/vendor/c9ea6662.modernizr.js></script><!-- commenting this template out, trying to build it in Newtemplates.js
+        <script type ="template/html" id="todayTmpl">
+
+    <% _.each(newToDoInput, function(newToDoInput, index, list) { %>
+
+
+
+        
+            <li data-todayid="<%= todayToDo._id %>" data-index="<%= index %>" class="toDoItem"> <span class="glyphicon glyphicon-remove finishedItem"></span>
+            
+
+            <%= newToDoInput.todayDo %>  </li>
+
+
+    <% }); %>
+
+
+        </script>
+ --><script type=template/html id=tomorrowTmpl><% _.each(tomorrowToDos, function(tomorrowToDos, index, list) { %>
+            <li data-index="<%= index %>" class="tomItem"> <%= tomorrowToDos.tomorrowDo %> </li>
+
+
+           // <li class="toDoItem"><span class="glyphicon glyphicon-remove finishedItem"></span>
+           // <span class="glyphicon glyphicon-remove removeToDo"> <%= tomorrowToDos.tomorrowDo %> </li>  
+
+
+    <% }); %></script><script type=template/html id=completeTmpl><% _.each(completedToDos, function(post, index, list) { %>
+
+
+
+            <li data-index="<%= index %>"> <%= completedToDos.completedDo %> </li>
+
+
+    <% }); %></script><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><div class=container><div class=thedoer><div class=header><h1>The "Get Things Done" App</h1></div><!--end header--><div class=row><div class="col-md-3 pull-left"><div class=doswitcher><p>This is a simple To Do list application to help you get things done. Build your to do list and click the <span class="glyphicon glyphicon-remove"></span> when you've completed that task!</p><ul class=switcher><li><a href=# class=duetodayLink>Today</a> <span class=todaycount></span></li><!-- <li><a href="#" class="completedtasksLink">Completed</a><span class="completecount"></span></li> --></ul></div><!--end do switcher col--></div><!--end sidebar col--><div class="col-md-9 pull-right"><div class="duetoday show"><form action="" id=todaytodoSubmit><input placeholder="What's your to-do for today?" class=taskToday><button type=submit class=addtask>ADD</button></form><ul class="duetodayul dos"></ul><!-- <div class="crudHomework">
+                                <button class="btn btnGet">Click to GET</button> 
+
+                            </div> --><!--  <div class="modal fade bs-example-modal-sm" id="editStuff" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                                ...
+                        </div>
+                    </div>
+                </div> --></div><!--end due today--><div class=completedtasks><hr><ul class="completeditemsul dos"></ul><button class="btn reset">Clear Completed</button><div class=deleteStuff></div></div><!--end completed tasks --></div><!--end todo area--></div><!--end row--><!--  <form action="" id="todaytodoSubmit">
+                                
+                                <input type="text" placeholder="update" class="taskToday">
+
+                                <button type="submit" class="addtask">Update</button>
+
+                            </form> --></div><!--end the dooer--></div><!--end contain--><script src=scripts/f942ec7a.vendor.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/6b5da0e8.plugins.js></script><script src=scripts/50191b21.main.js></script>
