@@ -116,6 +116,7 @@ var ToDos = {
 				ToDos.render($(".duetodayul"), Templates.editToDoTmpl, updateToDoInput);
 				console.log($(".newCheck"))
 				$(".newCheck").html(window.updateToDoInput.todayDo);
+				$(".newForm").html(window.updateToDoInput.todayDo);
 
 			}
 

@@ -26,7 +26,7 @@
 
 
         
-            <li data-todayid="<%= todayToDo._id %>" data-index="<%= index %>" class="toDoItem"> <span class="glyphicon glyphicon-ok finishedItem"></span>
+            <li data-todayid="<%= todayToDo._id %>" data-index="<%= index %>" class="toDoItem"> <span class="glyphicon glyphicon-remove finishedItem"></span>
             
 
             <%= newToDoInput.todayDo %>  </li>
@@ -43,7 +43,7 @@
             <li data-index="<%= index %>" class="tomItem"> <%= tomorrowToDos.tomorrowDo %> </li>
 
 
-           // <li class="toDoItem"><span class="glyphicon glyphicon-ok finishedItem"></span>
+           // <li class="toDoItem"><span class="glyphicon glyphicon-remove finishedItem"></span>
            // <span class="glyphicon glyphicon-remove removeToDo"> <%= tomorrowToDos.tomorrowDo %> </li>  
 
 
@@ -80,7 +80,7 @@
                 <div class="thedoer">
                     <div class="header">
 
-                <h1>The Doer Brothers GTD App</h1>
+                <h1>The "Get Things Done" App</h1>
               
             </div><!--end header-->
     
@@ -89,12 +89,12 @@
                     <div class="col-md-3 pull-left">
                     <div class="doswitcher">
 
-                        <p>Built by Mike Reser and Devon Hicks, this app is meant to help you get everything done. It's memory is a bit faulty though, so make sure to not close it out.</p>
+                        <p>This is a simple To Do list application to help you get things done. Build your to do list and click the <span class="glyphicon glyphicon-remove"></span> when you've completed that task!</p>
 
 
                         <ul class="switcher">
                             <li><a href="#" class="duetodayLink">Today</a> <span class="todaycount"></span></li>
-                            <li><a href="#" class="completedtasksLink">Completed</a><span class="completecount"></span></li>
+                            <!-- <li><a href="#" class="completedtasksLink">Completed</a><span class="completecount"></span></li> -->
                         </ul>
 
                     </div><!--end do switcher col-->
